@@ -1,3 +1,34 @@
-h1 {
-  color: bisque;
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  font-family: sans-serif;
+}
+
+.section_top {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background-image: url("../src/sunny.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: change 10s infinite ease-in-out;
+}
+@keyframes change {
+  20% {
+    background-image: url("../src/rainy.jpeg");
+  }
+  40% {
+    background-image: url("../src/thunderstorm.jpeg");
+  }
+  60% {
+    background-image: url("../src/night.jpeg");
+  }
+  80% {
+    background-image: url("../src/snow.jpeg");
+  }
 }
