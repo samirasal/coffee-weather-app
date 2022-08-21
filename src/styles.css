@@ -1,3 +1,67 @@
+.content {
+  padding: 30px;
+  border: 1px solid #000;
+  border-radius: 100px;
+  font-family: "Kalam", cursive;
+  margin-top: 10px;
+}
+.content-wrapper {
+  max-width: 600px;
+  margin: 30px auto;
+  text-align: center;
+}
+.heading {
+  text-align: center;
+  font-size: 80px;
+  color: black;
+  margin-top: 0px;
+}
+#icon {
+  width: 200px;
+  margin: 0 auto;
+}
+ul {
+  list-style: none;
+  text-align: center;
+  width: fit-content;
+  display: inline-block;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.units,
+img {
+  position: relative;
+  left: 50%;
+}
+.parameters {
+  position: relative;
+  left: 50%;
+}
+strong {
+  font-size: 30px;
+  font-weight: 200px;
+}
+small {
+  position: relative;
+  top: -20px;
+}
+.condition {
+  margin-left: 10px;
+}
+.git {
+  position: relative;
+  top: 30px;
+}
+.border {
+  border-radius: 70px;
+  position: relative;
+  top: 50px;
+  padding: 50px;
+  border: 1px solid #000;
+  font-family: "Kalam", cursive;
+}
 /* body {
   overflow: hidden;
   position: relative;
@@ -20,15 +84,6 @@
   80% {
     background-image: url("../src/snow.jpeg");
   }
-}
-.row {
-  padding-top: 600px;
-  padding-bottom: 200px;
-  margin: 0 auto;
-  padding-left: 20px;
-}
-.header,
-.temperature {
-  font-size: 20px;
-  border: 50px;
 } */
+
+
