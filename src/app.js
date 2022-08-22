@@ -23,6 +23,8 @@ function formatDate(timestamp) {
 }
 
 function showTemperature(response) {
+  console.log(response.data);
+
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   let cityElement = document.querySelector("#city");
@@ -37,10 +39,28 @@ function showTemperature(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
   let dateElement = document.querySelector("#date");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+
+  let sundayElement = document.querySelector("#sunday");
+  sundayElement.innerHTML = Math.round(response.data.main.temp);
+  let mondayElement = document.querySelector("#monday");
+  mondayElement.innerHTML = Math.round(response.data.main.temp);
+  let tuesdayElement = document.querySelector("#tuesday");
+  tuesdayElement.innerHTML = Math.round(response.data.main.temp);
+  let wednesdayElement = document.querySelector("#wednesday");
+  wednesdayElement.innerHTML = Math.round(response.data.main.temp);
+  let thursdayElement = document.querySelector("#thursday");
+  thursdayElement.innerHTML = Math.round(response.data.main.temp);
+  let fridayElement = document.querySelector("#friday");
+  fridayElement.innerHTML = Math.round(response.data.main.temp);
+  let saturdayElement = document.querySelector("#saturday");
+  saturdayElement.innerHTML = Math.round(response.data.main.temp);
 }
 
 let apiKey = "a1549a69de61bb59ce707631479b255f";
 let apiUrl =
   "https://api.openweathermap.org/data/2.5/weather?q=Ohio&appid=a1549a69de61bb59ce707631479b255f&units=metric";
+let apiKeyForecast = "627f117ca749cf6136b26f8dd8591547";
+let apiUrlForecast =
+  "https://pro.openweathermap.org/data/2.5/forecast/climate?q=Ohio&appid=627f117ca749cf6136b26f8dd8591547";
 
 axios.get(apiUrl).then(showTemperature);
