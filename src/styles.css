@@ -51,6 +51,7 @@ small {
   margin-left: 10px;
   text-transform: capitalize;
 }
+
 .git {
   position: relative;
   top: 30px;
@@ -63,7 +64,8 @@ small {
   border: 1px solid #000;
   font-family: "Kalam", cursive;
 }
-.hum,.win {
+.hum,
+.win {
   margin-left: 10px;
 }
 
