@@ -49,6 +49,7 @@ small {
 }
 .condition {
   margin-left: 10px;
+  text-transform: capitalize;
 }
 .git {
   position: relative;
@@ -62,6 +63,10 @@ small {
   border: 1px solid #000;
   font-family: "Kalam", cursive;
 }
+.hum,.win {
+  margin-left: 10px;
+}
+
 /* body {
   overflow: hidden;
   position: relative;
@@ -85,5 +90,3 @@ small {
     background-image: url("../src/snow.jpeg");
   }
 } */
-
-
