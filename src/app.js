@@ -21,9 +21,10 @@ function formatDate(timestamp) {
 
   return `${day} ${hours}:${minutes}`;
 }
+let city = "Ohio";
 
 function showTemperature(response) {
-//   console.log(response.data);
+  //   console.log(response.data);
 
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
@@ -61,12 +62,20 @@ function showTemperature(response) {
   let saturdayElement = document.querySelector("#saturday");
   saturdayElement.innerHTML = Math.round(response.data.main.temp);
 }
+function search(city) {
+  let apiKey = "a1549a69de61bb59ce707631479b255f";
+  let apiUrl =
+    "https://api.openweathermap.org/data/2.5/weather?q=Ohio&appid=a1549a69de61bb59ce707631479b255f&units=metric";
+  axios.get(apiUrl).then(showTemperature);
+}
 
-let apiKey = "a1549a69de61bb59ce707631479b255f";
-let apiUrl =
-  "https://api.openweathermap.org/data/2.5/weather?q=Ohio&appid=a1549a69de61bb59ce707631479b255f&units=metric";
-let apiKeyForecast = "627f117ca749cf6136b26f8dd8591547";
-let apiUrlForecast =
-  "https://pro.openweathermap.org/data/2.5/forecast/climate?q=Ohio&appid=627f117ca749cf6136b26f8dd8591547";
+function searchCity(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#city-input");
+  search(cityInput.value);
+}
 
-axios.get(apiUrl).then(showTemperature);
+search("Ohio");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", searchCity);
