@@ -2,7 +2,7 @@ function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
   if (hours < 10) {
-    minutes = `0${hours}`;
+    hours = `0${hours}`;
   }
   let minutes = date.getMinutes();
   if (minutes < 10) {
@@ -64,8 +64,7 @@ function showTemperature(response) {
 }
 function search(city) {
   let apiKey = "a1549a69de61bb59ce707631479b255f";
-  let apiUrl =
-    "https://api.openweathermap.org/data/2.5/weather?q=Ohio&appid=a1549a69de61bb59ce707631479b255f&units=metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=a1549a69de61bb59ce707631479b255f&units=metric`;
   axios.get(apiUrl).then(showTemperature);
 }
 
