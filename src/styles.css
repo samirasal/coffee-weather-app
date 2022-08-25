@@ -69,6 +69,15 @@ small {
   margin-left: 10px;
 }
 
+a {
+  text-decoration: none;
+}
+.active {
+  color: #000;
+}
+.active:hover {
+  color: #000;
+}
 /* body {
   overflow: hidden;
   position: relative;
