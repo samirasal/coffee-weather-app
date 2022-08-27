@@ -23,6 +23,13 @@ function formatDate(timestamp) {
 }
 let city = "Ohio";
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "a1549a69de61bb59ce707631479b255f";
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+}
+
 function showTemperature(response) {
   //   console.log(response.data);
 
@@ -49,20 +56,22 @@ function showTemperature(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
-  let sundayElement = document.querySelector("#sunday");
-  sundayElement.innerHTML = Math.round(response.data.main.temp);
-  let mondayElement = document.querySelector("#monday");
-  mondayElement.innerHTML = Math.round(response.data.main.temp);
-  let tuesdayElement = document.querySelector("#tuesday");
-  tuesdayElement.innerHTML = Math.round(response.data.main.temp);
-  let wednesdayElement = document.querySelector("#wednesday");
-  wednesdayElement.innerHTML = Math.round(response.data.main.temp);
-  let thursdayElement = document.querySelector("#thursday");
-  thursdayElement.innerHTML = Math.round(response.data.main.temp);
-  let fridayElement = document.querySelector("#friday");
-  fridayElement.innerHTML = Math.round(response.data.main.temp);
-  let saturdayElement = document.querySelector("#saturday");
-  saturdayElement.innerHTML = Math.round(response.data.main.temp);
+  getForecast(response.data.coord);
+
+  //   let sundayElement = document.querySelector("#sunday");
+  //   sundayElement.innerHTML = Math.round(response.data.main.temp);
+  //   let mondayElement = document.querySelector("#monday");
+  //   mondayElement.innerHTML = Math.round(response.data.main.temp);
+  //   let tuesdayElement = document.querySelector("#tuesday");
+  //   tuesdayElement.innerHTML = Math.round(response.data.main.temp);
+  //   let wednesdayElement = document.querySelector("#wednesday");
+  //   wednesdayElement.innerHTML = Math.round(response.data.main.temp);
+  //   let thursdayElement = document.querySelector("#thursday");
+  //   thursdayElement.innerHTML = Math.round(response.data.main.temp);
+  //   let fridayElement = document.querySelector("#friday");
+  //   fridayElement.innerHTML = Math.round(response.data.main.temp);
+  //   let saturdayElement = document.querySelector("#saturday");
+  //   saturdayElement.innerHTML = Math.round(response.data.main.temp);
 }
 function search(city) {
   let apiKey = "a1549a69de61bb59ce707631479b255f";

@@ -78,6 +78,11 @@ a {
 .active:hover {
   color: #000;
 }
+.image-width {
+  margin: 0px;
+  display: inline;
+  width: 50px;
+}
 /* body {
   overflow: hidden;
   position: relative;
