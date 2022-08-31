@@ -49,11 +49,12 @@ function showTemperature(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
   let dateElement = document.querySelector("#date");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
-  let iconElement = document.querySelector("#icon");
-  iconElement.setAttribute(
-    "src",
-    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
+  let iconElement = response.data.weather[0].icon;
+  //   iconElement.setAttribute(
+  //     "src",
+  //     `src/weathericons${response.data.weather[0].icon}.png`
+  //   );
+
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
   getForecast(response.data.coord);
@@ -115,3 +116,13 @@ function displayCelsiusTemperature(event) {
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 search("Ohio");
+
+function changeWeatherIcons(response) {
+  let iconElement = document.querySelector("#icon");
+  //   let iconElement = response.data.weather[0].icon;
+  if (weatherIcon === "01d") {
+    iconElement.setAttribute("src", "src/weathericons/moon.png");
+  } else if (weatherIcon === "02d") {
+    return iconElement.setAttribute("src", "src/weathericons/moon.png");
+  }
+}
