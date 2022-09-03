@@ -119,9 +119,16 @@ search("Ohio");
 
 function changeWeatherIcons(response) {
   let iconElement = document.querySelector("#icon");
-  //   let iconElement = response.data.weather[0].icon;
+  iconElement.setAttribute(
+    "src",
+    `weathericons/${response.data.weather[0].icon}.png`
+  );
+  let sunnyElement = document.querySelector("01d");
+  sunnyElement.setAttribute("src", "src/weathericons/moon.png");
+  let weatherIcon = document.querySelectorAll(".weather-icon");
+  weatherIcon = response.data.weather[0].icon;
   if (weatherIcon === "01d") {
-    iconElement.setAttribute("src", "src/weathericons/moon.png");
+    weatherIcon.innerHTML = "src/weathericons/sunny.png";
   } else if (weatherIcon === "02d") {
     return iconElement.setAttribute("src", "src/weathericons/moon.png");
   }
