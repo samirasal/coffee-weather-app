@@ -49,11 +49,12 @@ function showTemperature(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
   let dateElement = document.querySelector("#date");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
-  let iconElement = response.data.weather[0].icon;
-  //   iconElement.setAttribute(
-  //     "src",
-  //     `src/weathericons${response.data.weather[0].icon}.png`
-  //   );
+  let iconElement = document.querySelector("#icon");
+  //   let iconElement = response.data.weather[0].icon;
+  iconElement.setAttribute(
+    "src",
+    `src/weathericons/${response.data.weather[0].icon}.png`
+  );
 
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
@@ -61,8 +62,10 @@ function showTemperature(response) {
 }
 function displayForecast(response) {
   let forecast = response.data.daily;
+  console.log(response.data.daily);
   let sundayElement = document.querySelector("#sunday");
   sundayElement.innerHTML = Math.round(forecast[1].temp.max);
+
   let mondayElement = document.querySelector("#monday");
   mondayElement.innerHTML = Math.round(forecast[2].temp.max);
   let tuesdayElement = document.querySelector("#tuesday");
@@ -117,19 +120,19 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 search("Ohio");
 
-function changeWeatherIcons(response) {
-  let iconElement = document.querySelector("#icon");
-  iconElement.setAttribute(
-    "src",
-    `weathericons/${response.data.weather[0].icon}.png`
-  );
-  let sunnyElement = document.querySelector("01d");
-  sunnyElement.setAttribute("src", "src/weathericons/moon.png");
-  let weatherIcon = document.querySelectorAll(".weather-icon");
-  weatherIcon = response.data.weather[0].icon;
-  if (weatherIcon === "01d") {
-    weatherIcon.innerHTML = "src/weathericons/sunny.png";
-  } else if (weatherIcon === "02d") {
-    return iconElement.setAttribute("src", "src/weathericons/moon.png");
-  }
-}
+// function changeWeatherIcons(response) {
+//   let iconElement = document.querySelector("#icon");
+//   iconElement.setAttribute(
+//     "src",
+//     `weathericons/${response.data.weather[0].icon}.png`
+//   );
+//   let sunnyElement = document.querySelector("01d");
+//   sunnyElement.setAttribute("src", "src/weathericons/moon.png");
+//   let weatherIcon = document.querySelectorAll(".weather-icon");
+//   weatherIcon = response.data.weather[0].icon;
+//   if (weatherIcon === "01d") {
+//     weatherIcon.innerHTML = "src/weathericons/sunny.png";
+//   } else if (weatherIcon === "02d") {
+//     return iconElement.setAttribute("src", "src/weathericons/moon.png");
+//   }
+// }
