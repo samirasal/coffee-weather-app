@@ -69,6 +69,7 @@ small {
   padding: 50px;
   border: 1px solid #000;
   font-family: "Kalam", cursive;
+  font-size: 25px;
 }
 .hum,
 .win {
@@ -93,6 +94,9 @@ a {
   position: relative;
   left: -10%;
   margin: 0 auto;
+}
+#search-form {
+  opacity: 0.7;
 }
 /* body {
   overflow: hidden;
