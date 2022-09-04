@@ -161,7 +161,7 @@ function displayCelsiusTemperature(event) {
 }
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
-search("Ohio");
+search("Philadelphia");
 
 // function changeWeatherIcons(response) {
 //   let iconElement = document.querySelector("#icon");
