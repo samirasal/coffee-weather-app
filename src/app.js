@@ -62,26 +62,65 @@ function showTemperature(response) {
 }
 function displayForecast(response) {
   let forecast = response.data.daily;
-  console.log(response.data.daily);
+  // console.log(response.data.daily);
+
   let sundayElement = document.querySelector("#sunday");
   sundayElement.innerHTML = Math.round(forecast[1].temp.max);
-  let sundayIcon = document.querySelector("#sunday-weather-icon");
+  let sundayIcon = document.querySelector("#sunday-weather-logo");
   sundayIcon.setAttribute(
     "src",
     `src/weathericons/${forecast[1].weather[0].icon}.png`
   );
+
   let mondayElement = document.querySelector("#monday");
   mondayElement.innerHTML = Math.round(forecast[2].temp.max);
+  let mondayIcon = document.querySelector("#monday-weather-logo");
+  mondayIcon.setAttribute(
+    "src",
+    `src/weathericons/${forecast[2].weather[0].icon}.png`
+  );
+
   let tuesdayElement = document.querySelector("#tuesday");
   tuesdayElement.innerHTML = Math.round(forecast[3].temp.max);
+  let tuesdayIcon = document.querySelector("#tuesday-weather-logo");
+  tuesdayIcon.setAttribute(
+    "src",
+    `src/weathericons/${forecast[3].weather[0].icon}.png`
+  );
+
   let wednesdayElement = document.querySelector("#wednesday");
   wednesdayElement.innerHTML = Math.round(forecast[4].temp.max);
+  let wednesdayIcon = document.querySelector("#wednesday-weather-logo");
+  wednesdayIcon.setAttribute(
+    "src",
+    `src/weathericons/${forecast[4].weather[0].icon}.png`
+  );
+
   let thursdayElement = document.querySelector("#thursday");
   thursdayElement.innerHTML = Math.round(forecast[5].temp.max);
+
+  let thursdayIcon = document.querySelector("#thursday-weather-logo");
+  thursdayIcon.setAttribute(
+    "src",
+    `src/weathericons/${forecast[5].weather[0].icon}.png`
+  );
+
   let fridayElement = document.querySelector("#friday");
   fridayElement.innerHTML = Math.round(forecast[6].temp.max);
+
+  let fridayIcon = document.querySelector("#friday-weather-logo");
+  fridayIcon.setAttribute(
+    "src",
+    `src/weathericons/${forecast[6].weather[0].icon}.png`
+  );
+
   let saturdayElement = document.querySelector("#saturday");
   saturdayElement.innerHTML = Math.round(forecast[7].temp.max);
+  let saturdayIcon = document.querySelector("#saturday-weather-logo");
+  saturdayIcon.setAttribute(
+    "src",
+    `src/weathericons/${forecast[7].weather[0].icon}.png`
+  );
 }
 
 function search(city) {
