@@ -1,9 +1,27 @@
 body {
+  overflow: hidden;
+  position: relative;
   background-image: url("../src/screenII.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  animation: change 30s infinite ease-in-out;
 }
+@keyframes change {
+  20% {
+    background-image: url("../src/colorful-image.jpg");
+  }
+  40% {
+    background-image: url("../src/colorful-image2.jpg");
+  }
+  60% {
+    background-image: url("../src/colorful-image3.jpeg");
+  }
+  80% {
+    background-image: url("../src/colorful-image4.jpg");
+  }
+}
+
 .content {
   padding: 30px;
   border: 1px solid #000;
@@ -99,25 +117,11 @@ a {
   opacity: 0.7;
 }
 /* body {
-  overflow: hidden;
-  position: relative;
-  background-image: url("../src/sunny.jpeg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  animation: change 30s infinite ease-in-out;
-}
-@keyframes change {
-  20% {
-    background-image: url("../src/rainy.jpeg");
-  }
-  40% {
-    background-image: url("../src/thunderstorm.jpeg");
-  }
-  60% {
-    background-image: url("../src/night.jpeg");
-  }
-  80% {
-    background-image: url("../src/snow.jpeg");
-  }
+  
+  
+  
+  
+
+
+  
 } */

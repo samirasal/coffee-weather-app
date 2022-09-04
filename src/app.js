@@ -65,7 +65,11 @@ function displayForecast(response) {
   console.log(response.data.daily);
   let sundayElement = document.querySelector("#sunday");
   sundayElement.innerHTML = Math.round(forecast[1].temp.max);
-
+  let sundayIcon = document.querySelector("#sunday-weather-icon");
+  sundayIcon.setAttribute(
+    "src",
+    `src/weathericons/${forecast[1].weather[0].icon}.png`
+  );
   let mondayElement = document.querySelector("#monday");
   mondayElement.innerHTML = Math.round(forecast[2].temp.max);
   let tuesdayElement = document.querySelector("#tuesday");
