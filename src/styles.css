@@ -6,6 +6,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   animation: change 20s infinite ease-in-out;
+  overflow-x: auto:
 }
 @keyframes change {
   20% {
